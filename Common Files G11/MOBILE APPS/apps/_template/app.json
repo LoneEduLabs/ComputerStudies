@@ -1,0 +1,43 @@
+{
+ "id": "my-new-app",
+ "title": "My New App",
+ "icon": "rocket",
+ "appName": "MY NEW APP",
+ "description": "Copy this folder, rename it, and list your modules below. Then add an entry to apps/index.json.",
+ "weeks": [
+  {
+   "n": 1,
+   "title": "Week 1",
+   "modules": [
+    1
+   ],
+   "skills": [
+    "Components"
+   ],
+   "outcome": "A first screen."
+  }
+ ],
+ "collections": [
+  {
+   "id": "homework",
+   "label": "Homework ticked off"
+  }
+ ],
+ "badges": [
+  {
+   "id": "first-drop",
+   "name": "First Drop",
+   "icon": "box",
+   "desc": "Placed a component.",
+   "rule": {
+    "r": "stat",
+    "stat": "drops",
+    "gte": 1
+   }
+  }
+ ],
+ "kb": {},
+ "modules": [
+  "../school-app-1/modules/01-welcome.json"
+ ]
+}

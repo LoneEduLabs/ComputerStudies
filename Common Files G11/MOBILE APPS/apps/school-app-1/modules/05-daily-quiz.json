@@ -1,0 +1,699 @@
+{
+ "id": "m5",
+ "number": 5,
+ "title": "Daily Quiz",
+ "icon": "help",
+ "week": 2,
+ "summary": "Build a multiple-choice quiz with your own questions that scores answers.",
+ "skills": [
+  "Questions and answers",
+  "Scoring",
+  "Randomness",
+  "Saving scores"
+ ],
+ "screens": [
+  {
+   "id": "quizhome",
+   "name": "Daily Quiz"
+  },
+  {
+   "id": "quiz",
+   "name": "Quiz"
+  }
+ ],
+ "startScreen": "quizhome",
+ "tools": [
+  "header",
+  "text",
+  "button",
+  "quiz"
+ ],
+ "listCollection": null,
+ "subjectCards": false,
+ "formScreen": null,
+ "builtinHome": false,
+ "steps": [
+  {
+   "id": "m5-s1",
+   "title": "Add the header",
+   "screen": "quizhome",
+   "objective": "Start the Daily Quiz screen with a title bar.",
+   "concept": "A header sits at the top of a screen and tells people where they are.",
+   "expected": "A title bar appears at the top of the phone.",
+   "do": {
+    "k": "drag",
+    "tool": "header",
+    "zone": "header",
+    "n": 1
+   },
+   "expect": [
+    {
+     "type": "header",
+     "zone": "header",
+     "min": 1,
+     "label": "A Header sits in the Header zone of Daily Quiz",
+     "fail": "Drag the Header tool onto the glowing Header zone."
+    }
+   ],
+   "hints": [
+    "Find the glowing Header tool in the toolbox on the left.",
+    "Drag it onto the glowing Header zone of the phone.",
+    "On a touch screen: tap Header, then tap the glowing Header zone."
+   ]
+  },
+  {
+   "id": "m5-s2",
+   "title": "Name your screen",
+   "screen": "quizhome",
+   "objective": "Give the screen a clear title.",
+   "concept": "The header will say “Daily Quiz”. A clear title means nobody gets lost.",
+   "expected": "The header reads “Daily Quiz”.",
+   "do": {
+    "k": "edit",
+    "type": "header",
+    "text": "Daily Quiz"
+   },
+   "expect": [
+    {
+     "type": "header",
+     "text": "Daily Quiz",
+     "label": "The header says exactly: Daily Quiz"
+    }
+   ],
+   "hints": [
+    "Click the header on the phone to select it.",
+    "Edit Text content in the Properties panel.",
+    "Type exactly: Daily Quiz"
+   ],
+   "styles": [
+    {
+     "target": {
+      "type": "header",
+      "text": "Daily Quiz"
+     },
+     "set": {
+      "preset": "gradient"
+     },
+     "screen": "quizhome"
+    }
+   ]
+  },
+  {
+   "id": "m5-s3",
+   "title": "Write the quiz intro",
+   "screen": "quizhome",
+   "objective": "Welcome students with a short message.",
+   "concept": "ADD TEXT puts a line of text on the screen. Use your own words inside the quotation marks.",
+   "expected": "Your intro appears under the header.",
+   "do": {
+    "k": "cmd",
+    "cmds": [
+     "ADD TEXT \"Test yourself with 3 quick questions.\""
+    ],
+    "allow": [
+     "ADD TEXT"
+    ],
+    "free": false,
+    "select": null
+   },
+   "expect": [
+    {
+     "type": "text",
+     "text": "Test yourself with 3 quick questions.",
+     "label": "The message is exactly: Test yourself with 3 quick questions."
+    }
+   ],
+   "hints": [
+    "ADD TEXT adds a line of text.",
+    "Put the text inside straight quotation marks.",
+    "Copy the command from the step card exactly, then press Run Commands."
+   ],
+   "styles": [
+    {
+     "target": {
+      "type": "text",
+      "text": "Test yourself with 3 quick questions."
+     },
+     "set": {
+      "fg": "#064F47"
+     },
+     "screen": "quizhome"
+    }
+   ]
+  },
+  {
+   "id": "m5-s4",
+   "title": "Add the Start Quiz button",
+   "screen": "quizhome",
+   "objective": "Place the Start Quiz button.",
+   "concept": "The button will take students to the quiz questions.",
+   "expected": "A button appears in the Action bar.",
+   "do": {
+    "k": "drag",
+    "tool": "button",
+    "zone": "footer",
+    "n": 1
+   },
+   "expect": [
+    {
+     "type": "button",
+     "zone": "footer",
+     "min": 1,
+     "label": "A Button sits in the Action bar of Daily Quiz",
+     "fail": "Drag the Button tool onto the glowing Action bar."
+    }
+   ],
+   "hints": [
+    "Find the glowing Button tool in the toolbox on the left.",
+    "Drag it onto the glowing Action bar of the phone.",
+    "On a touch screen: tap Button, then tap the glowing Action bar."
+   ]
+  },
+  {
+   "id": "m5-s5",
+   "title": "Label the button",
+   "screen": "quizhome",
+   "objective": "Use a clear label.",
+   "concept": "The label says what will happen, and commands find the button by its label.",
+   "expected": "The button reads “Start Quiz”.",
+   "do": {
+    "k": "edit",
+    "type": "button",
+    "text": "Start Quiz"
+   },
+   "expect": [
+    {
+     "type": "button",
+     "text": "Start Quiz",
+     "label": "The button says exactly: Start Quiz"
+    }
+   ],
+   "hints": [
+    "Click the button on the phone to select it.",
+    "Edit Text content in the Properties panel.",
+    "Type exactly: Start Quiz"
+   ],
+   "styles": [
+    {
+     "target": {
+      "type": "button",
+      "text": "Start Quiz"
+     },
+     "set": {
+      "bg": "#0D8B7D",
+      "fg": "#FFFFFF"
+     },
+     "screen": "quizhome"
+    }
+   ]
+  },
+  {
+   "id": "m5-s6",
+   "title": "Open the next screen",
+   "screen": "quizhome",
+   "objective": "Move to the second screen.",
+   "concept": "NAVIGATE TO moves your workspace to the Quiz screen so you can build it.",
+   "expected": "The phone shows the Quiz screen.",
+   "do": {
+    "k": "cmd",
+    "cmds": [
+     "NAVIGATE TO \"Quiz\""
+    ],
+    "allow": [
+     "NAVIGATE TO"
+    ],
+    "free": false,
+    "select": null
+   },
+   "expect": [
+    {
+     "t": "screen",
+     "is": "quiz",
+     "label": "You are on the Quiz screen"
+    }
+   ],
+   "hints": [
+    "NAVIGATE TO changes the screen you are building.",
+    "Put the text inside straight quotation marks.",
+    "Copy the command from the step card exactly, then press Run Commands."
+   ]
+  },
+  {
+   "id": "m5-s7",
+   "title": "Title the quiz screen",
+   "screen": "quiz",
+   "objective": "Add a header with a command.",
+   "concept": "Every screen needs a header, and ADD HEADER builds one in the right zone.",
+   "expected": "A header appears on the quiz screen.",
+   "do": {
+    "k": "cmd",
+    "cmds": [
+     "ADD HEADER \"Quiz time\""
+    ],
+    "allow": [
+     "ADD HEADER"
+    ],
+    "free": false,
+    "select": null
+   },
+   "expect": [
+    {
+     "type": "header",
+     "text": "Quiz time",
+     "label": "The quiz screen has a header called Quiz time"
+    }
+   ],
+   "hints": [
+    "ADD HEADER adds a title bar.",
+    "Put the text inside straight quotation marks.",
+    "Copy the command from the step card exactly, then press Run Commands."
+   ],
+   "styles": [
+    {
+     "target": {
+      "type": "header",
+      "text": "Quiz time"
+     },
+     "set": {
+      "preset": "gradient"
+     },
+     "screen": "quiz"
+    }
+   ]
+  },
+  {
+   "id": "m5-s8",
+   "title": "Add the quiz",
+   "screen": "quiz",
+   "objective": "Place the quiz component.",
+   "concept": "The quiz shows one question at a time, shuffles the answers, marks them, and shows a score at the end. It starts empty: you will write the questions.",
+   "expected": "A quiz panel appears in the Body zone.",
+   "do": {
+    "k": "drag",
+    "tool": "quiz",
+    "zone": "body",
+    "n": 1
+   },
+   "expect": [
+    {
+     "type": "quiz",
+     "zone": "body",
+     "min": 1,
+     "label": "A Quiz sits in the Body zone of Quiz",
+     "fail": "Drag the Quiz tool onto the glowing Body zone."
+    }
+   ],
+   "hints": [
+    "Find the glowing Quiz tool in the toolbox on the left.",
+    "Drag it onto the glowing Body zone of the phone.",
+    "On a touch screen: tap Quiz, then tap the glowing Body zone."
+   ]
+  },
+  {
+   "id": "m5-s9",
+   "title": "Write your first question",
+   "screen": "quiz",
+   "objective": "Add a question with its answers.",
+   "concept": "ADD QUESTION takes the question, then ANSWER and the correct answer, then OR and the wrong answers. The correct answer always goes first, and the studio shuffles them when the quiz runs.",
+   "expected": "The quiz panel shows 1 question.",
+   "do": {
+    "k": "cmd",
+    "cmds": [
+     "ADD QUESTION \"What is 2 + 3?\" ANSWER \"5\" OR \"4\" OR \"6\""
+    ],
+    "allow": [
+     "ADD QUESTION"
+    ],
+    "free": false,
+    "select": null
+   },
+   "expect": [
+    {
+     "type": "quiz",
+     "len": {
+      "questions": 1
+     },
+     "label": "The quiz has at least 1 question"
+    }
+   ],
+   "hints": [
+    "Write the question, then the correct answer, then wrong answers separated by OR.",
+    "Every part goes inside quotation marks.",
+    "Copy the command from the step card exactly, then press Run Commands."
+   ]
+  },
+  {
+   "id": "m5-s10",
+   "title": "Add two more questions",
+   "screen": "quiz",
+   "objective": "Build a quiz with three questions.",
+   "concept": "More questions make the quiz more useful. Use subjects your classmates are studying.",
+   "expected": "The quiz panel shows 3 questions.",
+   "do": {
+    "k": "cmd",
+    "cmds": [
+     "ADD QUESTION \"Capital of Saudi Arabia?\" ANSWER \"Riyadh\" OR \"Jeddah\" OR \"Dammam\"",
+     "ADD QUESTION \"How many days in a week?\" ANSWER \"7\" OR \"5\" OR \"6\""
+    ],
+    "allow": [
+     "ADD QUESTION"
+    ],
+    "free": false,
+    "select": null
+   },
+   "expect": [
+    {
+     "type": "quiz",
+     "len": {
+      "questions": 3
+     },
+     "label": "The quiz has at least 3 questions"
+    }
+   ],
+   "hints": [
+    "Two ADD QUESTION lines, one per line.",
+    "Put the text inside straight quotation marks.",
+    "Copy the command from the step card exactly, then press Run Commands."
+   ]
+  },
+  {
+   "id": "m5-s11",
+   "title": "Connect Start Quiz",
+   "screen": "quizhome",
+   "objective": "Link the start button to the quiz.",
+   "concept": "Go back to the first screen and link its button to the quiz screen.",
+   "expected": "Start Quiz now opens the quiz.",
+   "do": {
+    "k": "cmd",
+    "cmds": [
+     "NAVIGATE TO \"Daily Quiz\"",
+     "LINK BUTTON \"Start Quiz\" TO \"Quiz\""
+    ],
+    "allow": [
+     "NAVIGATE TO",
+     "LINK BUTTON"
+    ],
+    "free": false,
+    "select": null
+   },
+   "expect": [
+    {
+     "type": "button",
+     "text": "Start Quiz",
+     "link": "quiz",
+     "screen": "quizhome",
+     "label": "Start Quiz opens the Quiz screen"
+    }
+   ],
+   "hints": [
+    "Go to the first screen, then link the button.",
+    "Put the text inside straight quotation marks.",
+    "Copy the command from the step card exactly, then press Run Commands."
+   ]
+  },
+  {
+   "id": "m5-style",
+   "title": "Final style check: every colour, border, shadow and style",
+   "screen": "quizhome",
+   "objective": "Give your screens the same colours, shapes and shadows as the model app.",
+   "concept": "Colours were chosen while you built each element. Now finish the whole look: every colour, background, border, corner, shadow and text style below must match the model app you tried at the start. Items you already set show a tick.",
+   "expected": "Your screens look exactly like the model app.",
+   "hints": [
+    "Click the element on the phone first. The style box (Choose colours, borders and corners) opens by itself.",
+    "Follow the sub-steps one by one: each says which row to use and which option to click. The red dot shows where.",
+    "Text alignment and weight are in the Properties panel (right) under “Text and layout”."
+   ],
+   "do": {
+    "k": "style",
+    "acts": [
+     {
+      "target": {
+       "type": "header",
+       "text": "Daily Quiz"
+      },
+      "set": {
+       "preset": "gradient",
+       "sh": "medium"
+      },
+      "screen": "quizhome"
+     },
+     {
+      "target": {
+       "type": "text",
+       "text": "Test yourself with 3 quick questions."
+      },
+      "set": {
+       "fg": "#064F47",
+       "al": "center",
+       "fw": "bold"
+      },
+      "screen": "quizhome"
+     },
+     {
+      "target": {
+       "type": "button",
+       "text": "Start Quiz"
+      },
+      "set": {
+       "bg": "#0D8B7D",
+       "fg": "#FFFFFF",
+       "br": 28
+      },
+      "screen": "quizhome"
+     },
+     {
+      "target": {
+       "type": "header",
+       "text": "Quiz time"
+      },
+      "set": {
+       "preset": "gradient",
+       "sh": "medium"
+      },
+      "screen": "quiz"
+     }
+    ]
+   },
+   "expect": []
+  },
+  {
+   "id": "m5-s12",
+   "title": "Run and take your quiz",
+   "screen": "quizhome",
+   "objective": "Take your own quiz and see your score.",
+   "concept": "Run Project makes the quiz live. Answer every question, then look at your score. The score is saved so other modules can use it.",
+   "expected": "You finish the quiz and see a score.",
+   "do": {
+    "k": "custom",
+    "allow": []
+   },
+   "expect": [
+    {
+     "t": "flag",
+     "name": "ran"
+    },
+    {
+     "t": "flag",
+     "name": "nav:quiz",
+     "label": "You opened the quiz screen"
+    },
+    {
+     "t": "flag",
+     "name": "quizDone",
+     "label": "You finished the quiz and saw your score",
+     "fail": "Answer every question in the running quiz and press See my score."
+    }
+   ],
+   "subs": [
+    {
+     "t": "Press Run Project in the top bar",
+     "hot": [
+      "topRun"
+     ],
+     "done": {
+      "any": [
+       {
+        "run": true
+       },
+       {
+        "flag": "quizDone"
+       }
+      ]
+     }
+    },
+    {
+     "t": "Tap Start Quiz",
+     "hot": [
+      "runBtn:Start Quiz"
+     ],
+     "done": {
+      "any": [
+       {
+        "flag": "nav:quiz"
+       },
+       {
+        "flag": "quizDone"
+       }
+      ]
+     }
+    },
+    {
+     "t": "Answer every question",
+     "hot": [
+      "runComp:quiz"
+     ],
+     "done": {
+      "flag": "quizDone"
+     }
+    }
+   ],
+   "hints": [
+    "Press Run Project and watch the demo.",
+    "Tap Start Quiz, then tap an answer for each question.",
+    "After the last question press See my score."
+   ]
+  }
+ ],
+ "objectives": [
+  "Write your own quiz questions with a right answer and wrong answers.",
+  "Run the quiz with shuffled answers and a score.",
+  "Save quiz scores so other parts of the app can use them."
+ ],
+ "mcqs": [
+  {
+   "q": "Why does a quiz shuffle the order of the answers?",
+   "a": [
+    "So the right answer is not always in the same place",
+    "To save memory",
+    "To make the quiz shorter",
+    "To change the score"
+   ],
+   "why": "Shuffling stops students from memorising a position."
+  },
+  {
+   "q": "What does the score do while the quiz runs?",
+   "a": [
+    "It counts the correct answers so far",
+    "It deletes wrong answers",
+    "It changes the header",
+    "It restarts the quiz"
+   ],
+   "why": "A running total is updated after every question."
+  },
+  {
+   "q": "What does a loop do in the quiz?",
+   "a": [
+    "Repeats the same steps for each question until none are left",
+    "Stops the app",
+    "Hides the answers",
+    "Saves the header"
+   ],
+   "why": "Loops let one set of instructions handle many questions."
+  },
+  {
+   "q": "Why show the correct answer after a wrong choice?",
+   "a": [
+    "It helps the student learn",
+    "It ends the quiz",
+    "It lowers the score again",
+    "It hides the question"
+   ],
+   "why": "Feedback turns a mistake into learning."
+  },
+  {
+   "q": "Why test a quiz with both correct and wrong answers?",
+   "a": [
+    "To check that both paths work",
+    "To make it longer",
+    "To change the colour",
+    "To reset the phone"
+   ],
+   "why": "Good testing covers every decision in the flow."
+  }
+ ],
+ "flowchart": "flowcharts/m5.json",
+ "reference": {
+  "screens": {
+   "quizhome": [
+    {
+     "id": "header-31",
+     "type": "header",
+     "zone": "header",
+     "text": "Daily Quiz",
+     "action": null,
+     "link": null,
+     "preset": "gradient",
+     "sh": "medium"
+    },
+    {
+     "id": "text-32",
+     "type": "text",
+     "zone": "body",
+     "text": "Test yourself with 3 quick questions.",
+     "action": null,
+     "link": null,
+     "fg": "#064F47",
+     "al": "center",
+     "fw": "bold"
+    },
+    {
+     "id": "button-33",
+     "type": "button",
+     "zone": "footer",
+     "text": "Start Quiz",
+     "action": null,
+     "link": "quiz",
+     "bg": "#0D8B7D",
+     "fg": "#FFFFFF",
+     "br": 28
+    }
+   ],
+   "quiz": [
+    {
+     "id": "header-34",
+     "type": "header",
+     "zone": "header",
+     "text": "Quiz time",
+     "action": null,
+     "link": null,
+     "preset": "gradient",
+     "sh": "medium"
+    },
+    {
+     "id": "quiz-35",
+     "type": "quiz",
+     "zone": "body",
+     "text": "Daily Quiz",
+     "action": null,
+     "link": null,
+     "questions": [
+      {
+       "q": "What is 2 + 3?",
+       "a": [
+        "5",
+        "4",
+        "6"
+       ]
+      },
+      {
+       "q": "Capital of Saudi Arabia?",
+       "a": [
+        "Riyadh",
+        "Jeddah",
+        "Dammam"
+       ]
+      },
+      {
+       "q": "How many days in a week?",
+       "a": [
+        "7",
+        "5",
+        "6"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

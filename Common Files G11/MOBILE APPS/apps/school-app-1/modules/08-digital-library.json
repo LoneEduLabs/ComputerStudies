@@ -1,0 +1,391 @@
+{
+ "id": "m8",
+ "number": 8,
+ "title": "Digital Library",
+ "icon": "library",
+ "week": 3,
+ "summary": "Build a shelf of books and notes that students can search and save.",
+ "skills": [
+  "Searching and filtering",
+  "Lists of records",
+  "Saving favourites"
+ ],
+ "screens": [
+  {
+   "id": "library",
+   "name": "Digital Library"
+  }
+ ],
+ "startScreen": "library",
+ "tools": [
+  "header",
+  "text",
+  "library"
+ ],
+ "listCollection": null,
+ "subjectCards": false,
+ "formScreen": null,
+ "builtinHome": false,
+ "steps": [
+  {
+   "id": "m8-s1",
+   "title": "Add the header",
+   "screen": "library",
+   "objective": "Start the Digital Library screen with a title bar.",
+   "concept": "A header sits at the top of a screen and tells people where they are.",
+   "expected": "A title bar appears at the top of the phone.",
+   "do": {
+    "k": "drag",
+    "tool": "header",
+    "zone": "header",
+    "n": 1
+   },
+   "expect": [
+    {
+     "type": "header",
+     "zone": "header",
+     "min": 1,
+     "label": "A Header sits in the Header zone of Digital Library",
+     "fail": "Drag the Header tool onto the glowing Header zone."
+    }
+   ],
+   "hints": [
+    "Find the glowing Header tool in the toolbox on the left.",
+    "Drag it onto the glowing Header zone of the phone.",
+    "On a touch screen: tap Header, then tap the glowing Header zone."
+   ]
+  },
+  {
+   "id": "m8-s2",
+   "title": "Name your screen",
+   "screen": "library",
+   "objective": "Give the screen a clear title.",
+   "concept": "The header will say “Digital Library”. A clear title means nobody gets lost.",
+   "expected": "The header reads “Digital Library”.",
+   "do": {
+    "k": "edit",
+    "type": "header",
+    "text": "Digital Library"
+   },
+   "expect": [
+    {
+     "type": "header",
+     "text": "Digital Library",
+     "label": "The header says exactly: Digital Library"
+    }
+   ],
+   "hints": [
+    "Click the header on the phone to select it.",
+    "Edit Text content in the Properties panel.",
+    "Type exactly: Digital Library"
+   ],
+   "styles": [
+    {
+     "target": {
+      "type": "header",
+      "text": "Digital Library"
+     },
+     "set": {
+      "preset": "gradient"
+     },
+     "screen": "library"
+    }
+   ]
+  },
+  {
+   "id": "m8-s3",
+   "title": "Add the library",
+   "screen": "library",
+   "objective": "Place the library component.",
+   "concept": "The library shows books with a search box. Starter books are built in, and you add your own. Students can save favourites to My shelf.",
+   "expected": "A library panel appears in the Body zone.",
+   "do": {
+    "k": "drag",
+    "tool": "library",
+    "zone": "body",
+    "n": 1
+   },
+   "expect": [
+    {
+     "type": "library",
+     "zone": "body",
+     "min": 1,
+     "label": "A Library sits in the Body zone of Digital Library",
+     "fail": "Drag the Library tool onto the glowing Body zone."
+    }
+   ],
+   "hints": [
+    "Find the glowing Library tool in the toolbox on the left.",
+    "Drag it onto the glowing Body zone of the phone.",
+    "On a touch screen: tap Library, then tap the glowing Body zone."
+   ]
+  },
+  {
+   "id": "m8-s4",
+   "title": "Add your first book",
+   "screen": "library",
+   "objective": "Put a book on the shelf.",
+   "concept": "ADD BOOK needs a title, an author with BY, and a tag with TAG. The tag helps with searching.",
+   "expected": "The library shows 1 book of yours.",
+   "do": {
+    "k": "cmd",
+    "cmds": [
+     "ADD BOOK \"My Science Notes\" BY \"Class 7\" TAG \"Science\""
+    ],
+    "allow": [
+     "ADD BOOK"
+    ],
+    "free": false,
+    "select": null
+   },
+   "expect": [
+    {
+     "type": "library",
+     "len": {
+      "books": 1
+     },
+     "label": "The library has at least 1 book you added"
+    }
+   ],
+   "hints": [
+    "ADD BOOK \"title\" BY \"author\" TAG \"tag\".",
+    "Put the text inside straight quotation marks.",
+    "Copy the command from the step card exactly, then press Run Commands."
+   ]
+  },
+  {
+   "id": "m8-s5",
+   "title": "Add two more books",
+   "screen": "library",
+   "objective": "Fill the shelf.",
+   "concept": "A good library has books on different subjects. Use your own titles and tags.",
+   "expected": "The library shows 3 books of yours.",
+   "do": {
+    "k": "cmd",
+    "cmds": [
+     "ADD BOOK \"Maths Revision Guide\" BY \"Mr Ahmed\" TAG \"Maths\"",
+     "ADD BOOK \"Short Stories\" BY \"Class 6\" TAG \"Stories\""
+    ],
+    "allow": [
+     "ADD BOOK"
+    ],
+    "free": false,
+    "select": null
+   },
+   "expect": [
+    {
+     "type": "library",
+     "len": {
+      "books": 3
+     },
+     "label": "The library has at least 3 books you added"
+    }
+   ],
+   "hints": [
+    "Two ADD BOOK lines, one per line.",
+    "Put the text inside straight quotation marks.",
+    "Copy the command from the step card exactly, then press Run Commands."
+   ]
+  },
+  {
+   "id": "m8-style",
+   "title": "Final style check: every colour, border, shadow and style",
+   "screen": "library",
+   "objective": "Give your screens the same colours, shapes and shadows as the model app.",
+   "concept": "Colours were chosen while you built each element. Now finish the whole look: every colour, background, border, corner, shadow and text style below must match the model app you tried at the start. Items you already set show a tick.",
+   "expected": "Your screens look exactly like the model app.",
+   "hints": [
+    "Click the element on the phone first. The style box (Choose colours, borders and corners) opens by itself.",
+    "Follow the sub-steps one by one: each says which row to use and which option to click. The red dot shows where.",
+    "Text alignment and weight are in the Properties panel (right) under “Text and layout”."
+   ],
+   "do": {
+    "k": "style",
+    "acts": [
+     {
+      "target": {
+       "type": "header",
+       "text": "Digital Library"
+      },
+      "set": {
+       "preset": "gradient",
+       "sh": "medium"
+      },
+      "screen": "library"
+     }
+    ]
+   },
+   "expect": []
+  },
+  {
+   "id": "m8-s6",
+   "title": "Run and use your library",
+   "screen": "library",
+   "objective": "Search the shelf and save a book.",
+   "concept": "Search filters by title, author or tag. Tap the plus button to save a book to My shelf.",
+   "expected": "You search for a book and see it on My shelf.",
+   "do": {
+    "k": "custom",
+    "allow": []
+   },
+   "expect": [
+    {
+     "t": "flag",
+     "name": "ran"
+    },
+    {
+     "t": "flag",
+     "name": "libSearched",
+     "label": "You used the search box",
+     "fail": "Type in the search box in the running app."
+    },
+    {
+     "t": "flag",
+     "name": "bookSaved",
+     "label": "You saved a book to My shelf",
+     "fail": "Tap the plus button next to a book."
+    }
+   ],
+   "subs": [
+    {
+     "t": "Press Run Project in the top bar",
+     "hot": [
+      "topRun"
+     ],
+     "done": {
+      "any": [
+       {
+        "run": true
+       },
+       {
+        "flag": "bookSaved"
+       }
+      ]
+     }
+    },
+    {
+     "t": "Type in the search box (try: sci)",
+     "hot": [
+      "runSearch"
+     ],
+     "done": {
+      "flag": "libSearched"
+     }
+    },
+    {
+     "t": "Tap the + button to save a book",
+     "hot": [
+      "runComp:book"
+     ],
+     "done": {
+      "flag": "bookSaved"
+     }
+    }
+   ],
+   "hints": [
+    "Press Run Project.",
+    "Type a few letters in the search box.",
+    "Tap the plus button next to a book."
+   ]
+  }
+ ],
+ "objectives": [
+  "Add your own books with an author and a tag.",
+  "Search the shelf by title, author or tag.",
+  "Save favourite books to My shelf."
+ ],
+ "mcqs": [
+  {
+   "q": "What does a library search box compare your words with?",
+   "a": [
+    "The title, author and tag of each book",
+    "Only the colour",
+    "Only the page number",
+    "The phone name"
+   ],
+   "why": "Searching looks for matching text in the book details."
+  },
+  {
+   "q": "What is a tag on a book?",
+   "a": [
+    "A short label that groups books by topic",
+    "A password",
+    "A page number",
+    "A button"
+   ],
+   "why": "Tags make books easier to find."
+  },
+  {
+   "q": "Why can a student save a book to a shelf?",
+   "a": [
+    "To keep a personal list of the books they want",
+    "To delete the book",
+    "To change the author",
+    "To speed up the phone"
+   ],
+   "why": "Saved items give each user their own collection."
+  },
+  {
+   "q": "Why should search ignore capital letters?",
+   "a": [
+    "So \"Maths\" and \"maths\" both find the same book",
+    "To make words shorter",
+    "To save space",
+    "To hide results"
+   ],
+   "why": "Users do not type in a fixed style."
+  },
+  {
+   "q": "Why show a message when a search finds nothing?",
+   "a": [
+    "It tells the user the search worked but nothing matched",
+    "It closes the app",
+    "It deletes the shelf",
+    "It changes the tag"
+   ],
+   "why": "A clear message is better than a blank screen."
+  }
+ ],
+ "flowchart": "flowcharts/m8.json",
+ "reference": {
+  "screens": {
+   "library": [
+    {
+     "id": "header-41",
+     "type": "header",
+     "zone": "header",
+     "text": "Digital Library",
+     "action": null,
+     "link": null,
+     "preset": "gradient",
+     "sh": "medium"
+    },
+    {
+     "id": "library-42",
+     "type": "library",
+     "zone": "body",
+     "text": "Digital Library",
+     "action": null,
+     "link": null,
+     "books": [
+      {
+       "title": "My Science Notes",
+       "author": "Class 7",
+       "tag": "Science"
+      },
+      {
+       "title": "Maths Revision Guide",
+       "author": "Mr Ahmed",
+       "tag": "Maths"
+      },
+      {
+       "title": "Short Stories",
+       "author": "Class 6",
+       "tag": "Stories"
+      }
+     ]
+    }
+   ]
+  }
+ }
+}
