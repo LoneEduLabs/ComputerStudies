@@ -1,0 +1,193 @@
+{
+ "module": "m4",
+ "title": "Reminders",
+ "subtitle": "A list of reminders with dates; reminders that are due are highlighted.",
+ "nodes": [
+  {
+   "id": "start",
+   "type": "start",
+   "label": "Start Module 4"
+  },
+  {
+   "id": "a",
+   "type": "manual",
+   "label": "Drag a Header, type: Reminders",
+   "step": [
+    "m4-s1",
+    "m4-s2"
+   ]
+  },
+  {
+   "id": "b",
+   "type": "manual",
+   "label": "Drag a List into the Body",
+   "step": "m4-s3"
+  },
+  {
+   "id": "c",
+   "type": "manual",
+   "label": "Drag a Button, label it New Reminder",
+   "step": [
+    "m4-s4",
+    "m4-s5"
+   ]
+  },
+  {
+   "id": "d",
+   "type": "input",
+   "label": "NAVIGATE TO \"New Reminder\", ADD INPUT \"What to remember\"",
+   "step": [
+    "m4-s6",
+    "m4-s7"
+   ]
+  },
+  {
+   "id": "e",
+   "type": "input",
+   "label": "Command: ADD DATE \"When\"",
+   "note": "A real date picker.",
+   "step": "m4-s8"
+  },
+  {
+   "id": "f",
+   "type": "input",
+   "label": "ADD BUTTON \"Save Reminder\", SET ACTION ... SAVE \"reminders\"",
+   "step": "m4-s9"
+  },
+  {
+   "id": "g",
+   "type": "input",
+   "label": "Link the two screens to each other",
+   "step": "m4-s10"
+  },
+  {
+   "id": "h",
+   "type": "process",
+   "label": "Style the screens",
+   "step": "m4-style"
+  },
+  {
+   "id": "i",
+   "type": "subprocess",
+   "label": "Run Project: add a reminder for tomorrow",
+   "step": "m4-s11"
+  },
+  {
+   "id": "q",
+   "type": "decision",
+   "label": "Are the reminder and its date filled in?"
+  },
+  {
+   "id": "msg",
+   "type": "display",
+   "label": "Message: Please fill in the missing field",
+   "rowWith": "q"
+  },
+  {
+   "id": "db",
+   "type": "data",
+   "label": "Save the reminder in \"reminders\""
+  },
+  {
+   "id": "q2",
+   "type": "decision",
+   "label": "Is the date today or earlier?"
+  },
+  {
+   "id": "ok",
+   "type": "display",
+   "label": "Shown as a normal reminder",
+   "rowWith": "q2"
+  },
+  {
+   "id": "due",
+   "type": "display",
+   "label": "Highlighted: \"reminder is due now\""
+  },
+  {
+   "id": "end",
+   "type": "end",
+   "label": "Module 4 complete: take the quiz"
+  }
+ ],
+ "edges": [
+  {
+   "from": "start",
+   "to": "a"
+  },
+  {
+   "from": "a",
+   "to": "b"
+  },
+  {
+   "from": "b",
+   "to": "c"
+  },
+  {
+   "from": "c",
+   "to": "d"
+  },
+  {
+   "from": "d",
+   "to": "e"
+  },
+  {
+   "from": "e",
+   "to": "f"
+  },
+  {
+   "from": "f",
+   "to": "g"
+  },
+  {
+   "from": "g",
+   "to": "h"
+  },
+  {
+   "from": "h",
+   "to": "i"
+  },
+  {
+   "from": "i",
+   "to": "q"
+  },
+  {
+   "from": "q",
+   "to": "db",
+   "label": "Yes"
+  },
+  {
+   "from": "q",
+   "to": "msg",
+   "label": "No"
+  },
+  {
+   "from": "msg",
+   "to": "i",
+   "route": "loop",
+   "side": "right"
+  },
+  {
+   "from": "db",
+   "to": "q2"
+  },
+  {
+   "from": "q2",
+   "to": "due",
+   "label": "Yes"
+  },
+  {
+   "from": "q2",
+   "to": "ok",
+   "label": "No"
+  },
+  {
+   "from": "ok",
+   "to": "end"
+  },
+  {
+   "from": "due",
+   "to": "end"
+  }
+ ]
+}

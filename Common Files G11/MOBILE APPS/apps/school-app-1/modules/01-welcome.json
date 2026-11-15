@@ -1,0 +1,818 @@
+{
+ "id": "w1",
+ "number": 1,
+ "title": "Welcome Screen",
+ "icon": "star",
+ "week": 1,
+ "summary": "Design the first screen of your app: your school’s name, a logo, a welcome message, cards and buttons.",
+ "skills": [
+  "Components",
+  "Drag and drop",
+  "Properties",
+  "Colours",
+  "Commands",
+  "Navigation",
+  "Testing"
+ ],
+ "screens": [
+  {
+   "id": "welcome",
+   "name": "Welcome"
+  },
+  {
+   "id": "home",
+   "name": "Home",
+   "builtin": true
+  }
+ ],
+ "startScreen": "welcome",
+ "tools": [
+  "header",
+  "logo",
+  "text",
+  "card",
+  "button"
+ ],
+ "builtinHome": true,
+ "listCollection": null,
+ "subjectCards": false,
+ "formScreen": null,
+ "steps": [
+  {
+   "id": "w1-s1",
+   "title": "Add the school header",
+   "screen": "welcome",
+   "objective": "Start your welcome screen with a title bar.",
+   "concept": "The welcome screen is the first thing students see. A header at the top will carry your school’s name.",
+   "expected": "A title bar appears at the top of the phone.",
+   "do": {
+    "k": "drag",
+    "tool": "header",
+    "zone": "header",
+    "n": 1
+   },
+   "expect": [
+    {
+     "type": "header",
+     "zone": "header",
+     "min": 1,
+     "label": "A Header sits in the Header zone of the Welcome screen",
+     "fail": "Drag the Header tool onto the glowing Header zone."
+    }
+   ],
+   "hints": [
+    "Find the glowing Header tool in the toolbox on the left.",
+    "Drag it onto the dashed strip at the top of the phone.",
+    "On a touch screen: tap Header, then tap the glowing Header zone."
+   ]
+  },
+  {
+   "id": "w1-s2",
+   "title": "Type your school’s name",
+   "screen": "welcome",
+   "objective": "Make the app yours by using your real school name.",
+   "concept": "The header text becomes the title of your welcome screen. Everyone who opens the app will see it first.",
+   "expected": "The header shows your school’s name.",
+   "do": {
+    "k": "edit",
+    "type": "header",
+    "text": "Alrowad International Schools"
+   },
+   "expect": [
+    {
+     "type": "header",
+     "text": "Alrowad International Schools",
+     "label": "The header says exactly: Alrowad International Schools",
+     "fail": "Select the header on the phone, then in Properties → Text content type exactly: Alrowad International Schools"
+    }
+   ],
+   "hints": [
+    "Click the header on the phone to select it.",
+    "In the Properties panel, change Text content.",
+    "Type your school’s name, then press Check My Work."
+   ],
+   "styles": [
+    {
+     "target": {
+      "type": "header",
+      "text": "Alrowad International Schools"
+     },
+     "set": {
+      "preset": "gradient"
+     },
+     "screen": "welcome"
+    }
+   ]
+  },
+  {
+   "id": "w1-s3",
+   "title": "Add your school logo",
+   "screen": "welcome",
+   "objective": "Place a logo badge on the screen.",
+   "concept": "A logo is a round badge that shows your school’s initials. It makes the app feel like it belongs to your school.",
+   "expected": "A round badge appears in the middle of the phone.",
+   "do": {
+    "k": "drag",
+    "tool": "logo",
+    "zone": "body",
+    "n": 1
+   },
+   "expect": [
+    {
+     "type": "logo",
+     "min": 1,
+     "label": "A Logo sits in the Body zone",
+     "fail": "Drag the Logo tool into the Body zone."
+    }
+   ],
+   "hints": [
+    "The Logo tool is in the toolbox, with a pink badge icon.",
+    "Drop it in the large Body zone.",
+    "Tap-to-place works too: tap Logo, then tap the Body zone."
+   ]
+  },
+  {
+   "id": "w1-s4",
+   "title": "Put your school name on the logo",
+   "screen": "welcome",
+   "objective": "Learn that the logo takes its initials from the name you type.",
+   "concept": "The logo shows the first letters of the words you type. “Al Rowad School” becomes AR.",
+   "expected": "The logo shows your school’s initials and name.",
+   "do": {
+    "k": "edit",
+    "type": "logo",
+    "text": "Alrowad International Schools"
+   },
+   "expect": [
+    {
+     "type": "logo",
+     "text": "Alrowad International Schools",
+     "label": "The logo says exactly: Alrowad International Schools",
+     "fail": "Select the logo on the phone, then in Properties → Text content type exactly: Alrowad International Schools"
+    }
+   ],
+   "hints": [
+    "Click the logo on the phone.",
+    "Edit Text content in the Properties panel.",
+    "Type your school’s name. The initials update by themselves."
+   ],
+   "styles": [
+    {
+     "target": {
+      "type": "logo",
+      "text": "Alrowad International Schools"
+     },
+     "set": {
+      "bg": "#17263D"
+     },
+     "screen": "welcome"
+    }
+   ]
+  },
+  {
+   "id": "w1-s5",
+   "title": "Write a welcome message",
+   "screen": "welcome",
+   "objective": "Add a line of text with a command.",
+   "concept": "ADD TEXT puts a line of text in the Body zone. Write a friendly message in your own words, inside quotation marks.",
+   "expected": "Your message appears under the logo.",
+   "do": {
+    "k": "cmd",
+    "cmds": [
+     "ADD TEXT \"Welcome to our school app!\""
+    ],
+    "allow": [
+     "ADD TEXT"
+    ],
+    "free": false,
+    "select": null
+   },
+   "expect": [
+    {
+     "type": "text",
+     "text": "Welcome to our school app!",
+     "label": "The message is exactly: Welcome to our school app!"
+    }
+   ],
+   "hints": [
+    "ADD TEXT adds a line of text.",
+    "Put your message inside quotation marks.",
+    "For example: ADD TEXT \"Welcome to our school app!\""
+   ],
+   "styles": [
+    {
+     "target": {
+      "type": "text",
+      "text": "Welcome to our school app!"
+     },
+     "set": {
+      "fg": "#064F47"
+     },
+     "screen": "welcome"
+    }
+   ]
+  },
+  {
+   "id": "w1-s6",
+   "title": "Add your first card",
+   "screen": "welcome",
+   "objective": "Use a card to show one feature of your app.",
+   "concept": "Cards are blocks that hold one idea each, such as Homework, Timetable or Quiz.",
+   "expected": "A card appears in the Body zone.",
+   "do": {
+    "k": "drag",
+    "tool": "card",
+    "zone": "body",
+    "n": 1
+   },
+   "expect": [
+    {
+     "type": "card",
+     "min": 1,
+     "label": "A Card sits in the Body zone",
+     "fail": "Drag the Card tool into the Body zone."
+    }
+   ],
+   "hints": [
+    "Find the Card tool.",
+    "Drop it in the Body zone.",
+    "Tap-to-place: tap Card, then tap the Body zone."
+   ]
+  },
+  {
+   "id": "w1-s7",
+   "title": "Name your card",
+   "screen": "welcome",
+   "objective": "Give the card a name with SET TEXT.",
+   "concept": "SET TEXT changes the text of the selected component. Choose a feature of your app, such as Homework Helper.",
+   "expected": "The card shows your own name for it.",
+   "do": {
+    "k": "cmd",
+    "cmds": [
+     "SET TEXT \"Homework Helper\""
+    ],
+    "allow": [
+     "SET TEXT"
+    ],
+    "free": false,
+    "select": "card"
+   },
+   "expect": [
+    {
+     "type": "card",
+     "text": "Homework Helper",
+     "label": "The card says exactly: Homework Helper"
+    }
+   ],
+   "hints": [
+    "Click the card on the phone first.",
+    "Then type SET TEXT and the name in quotation marks.",
+    "For example: SET TEXT \"Homework Helper\""
+   ],
+   "styles": [
+    {
+     "target": {
+      "type": "card",
+      "text": "Homework Helper"
+     },
+     "set": {
+      "bg": "#DDF7F3",
+      "fg": "#064F47"
+     },
+     "screen": "welcome"
+    }
+   ]
+  },
+  {
+   "id": "w1-s8",
+   "title": "Add two more cards",
+   "screen": "welcome",
+   "objective": "Show three different features with three different cards.",
+   "concept": "Each ADD CARD command creates another card. Pick names that tell students what the app can do.",
+   "expected": "Three cards, each with its own name.",
+   "do": {
+    "k": "cmd",
+    "cmds": [
+     "ADD CARD \"My Timetable\"",
+     "ADD CARD \"Daily Quiz\""
+    ],
+    "allow": [
+     "ADD CARD"
+    ],
+    "free": false,
+    "select": null
+   },
+   "expect": [
+    {
+     "type": "card",
+     "min": 3,
+     "label": "There are 3 cards: Homework Helper, My Timetable, Daily Quiz"
+    },
+    {
+     "type": "card",
+     "text": "Homework Helper",
+     "label": "A card says exactly: Homework Helper"
+    },
+    {
+     "type": "card",
+     "text": "My Timetable",
+     "label": "A card says exactly: My Timetable"
+    },
+    {
+     "type": "card",
+     "text": "Daily Quiz",
+     "label": "A card says exactly: Daily Quiz"
+    }
+   ],
+   "hints": [
+    "Type two ADD CARD commands, one per line.",
+    "Each name goes in quotation marks.",
+    "For example: ADD CARD \"My Timetable\" and ADD CARD \"Daily Quiz\""
+   ],
+   "styles": [
+    {
+     "target": {
+      "type": "card",
+      "text": "My Timetable"
+     },
+     "set": {
+      "bg": "#DDF7F3",
+      "fg": "#064F47"
+     },
+     "screen": "welcome"
+    },
+    {
+     "target": {
+      "type": "card",
+      "text": "Daily Quiz"
+     },
+     "set": {
+      "bg": "#DDF7F3",
+      "fg": "#064F47"
+     },
+     "screen": "welcome"
+    }
+   ]
+  },
+  {
+   "id": "w1-s9",
+   "title": "Add the Get Started button",
+   "screen": "welcome",
+   "objective": "Place a button in the Action bar.",
+   "concept": "The Get Started button will take students from the welcome screen into the app.",
+   "expected": "A button appears at the bottom of the phone.",
+   "do": {
+    "k": "drag",
+    "tool": "button",
+    "zone": "footer",
+    "n": 1
+   },
+   "expect": [
+    {
+     "type": "button",
+     "zone": "footer",
+     "min": 1,
+     "label": "A Button sits in the Action bar",
+     "fail": "Drag the Button tool to the Action bar at the bottom."
+    }
+   ],
+   "hints": [
+    "Find the Button tool.",
+    "Drop it on the Action bar strip at the bottom.",
+    "Tap-to-place: tap Button, then tap the Action bar."
+   ]
+  },
+  {
+   "id": "w1-s10",
+   "title": "Label the button",
+   "screen": "welcome",
+   "objective": "Give the button a clear label.",
+   "concept": "We will use the exact label Get Started, because the next steps find the button by its label.",
+   "expected": "The button reads “Get Started”.",
+   "do": {
+    "k": "edit",
+    "type": "button",
+    "text": "Get Started"
+   },
+   "expect": [
+    {
+     "type": "button",
+     "text": "Get Started",
+     "label": "The button says Get Started",
+     "fail": "Select the button and set Text content to exactly: Get Started"
+    }
+   ],
+   "hints": [
+    "Click the button on the phone.",
+    "Change Text content in the Properties panel.",
+    "Type exactly: Get Started"
+   ],
+   "styles": [
+    {
+     "target": {
+      "type": "button",
+      "text": "Get Started"
+     },
+     "set": {
+      "bg": "#0D8B7D",
+      "fg": "#FFFFFF"
+     },
+     "screen": "welcome"
+    }
+   ]
+  },
+  {
+   "id": "w1-s11",
+   "title": "Add a second button",
+   "screen": "welcome",
+   "objective": "Use another button for a different job.",
+   "concept": "A welcome screen can offer more than one choice, such as About Us or Contact. Choose a label that fits your school.",
+   "expected": "A second button appears in the Action bar.",
+   "do": {
+    "k": "cmd",
+    "cmds": [
+     "ADD BUTTON \"About Us\""
+    ],
+    "allow": [
+     "ADD BUTTON"
+    ],
+    "free": false,
+    "select": null
+   },
+   "expect": [
+    {
+     "type": "button",
+     "min": 2,
+     "label": "There are two buttons"
+    },
+    {
+     "type": "button",
+     "text": "About Us",
+     "label": "The second button says exactly: About Us"
+    }
+   ],
+   "hints": [
+    "ADD BUTTON adds a button to the Action bar.",
+    "The label goes in quotation marks.",
+    "For example: ADD BUTTON \"About Us\""
+   ],
+   "styles": [
+    {
+     "target": {
+      "type": "button",
+      "text": "About Us"
+     },
+     "set": {
+      "preset": "outline"
+     },
+     "screen": "welcome"
+    }
+   ]
+  },
+  {
+   "id": "w1-s12",
+   "title": "Link Get Started to Home",
+   "screen": "welcome",
+   "objective": "Make the button open another screen.",
+   "concept": "LINK BUTTON sends the user to a screen when they tap. The Home screen is the dashboard of your finished app, which the studio builds for you.",
+   "expected": "Get Started now opens Home.",
+   "do": {
+    "k": "cmd",
+    "cmds": [
+     "LINK BUTTON \"Get Started\" TO \"Home\""
+    ],
+    "allow": [
+     "LINK BUTTON"
+    ],
+    "free": false,
+    "select": null
+   },
+   "expect": [
+    {
+     "type": "button",
+     "text": "Get Started",
+     "link": "home",
+     "label": "Get Started is linked to Home",
+     "fail": "Run: LINK BUTTON \"Get Started\" TO \"Home\""
+    }
+   ],
+   "hints": [
+    "LINK BUTTON needs the button label and the screen name.",
+    "Both go in quotation marks, with the word TO between.",
+    "Exactly: LINK BUTTON \"Get Started\" TO \"Home\""
+   ]
+  },
+  {
+   "id": "w1-style",
+   "title": "Final style check: every colour, border, shadow and style",
+   "screen": "welcome",
+   "objective": "Give your screens the same colours, shapes and shadows as the model app.",
+   "concept": "Colours were chosen while you built each element. Now finish the whole look: every colour, background, border, corner, shadow and text style below must match the model app you tried at the start. Items you already set show a tick.",
+   "expected": "Your screens look exactly like the model app.",
+   "hints": [
+    "Click the element on the phone first. The style box (Choose colours, borders and corners) opens by itself.",
+    "Follow the sub-steps one by one: each says which row to use and which option to click. The red dot shows where.",
+    "Text alignment and weight are in the Properties panel (right) under “Text and layout”."
+   ],
+   "do": {
+    "k": "style",
+    "acts": [
+     {
+      "target": {
+       "type": "header",
+       "text": "Alrowad International Schools"
+      },
+      "set": {
+       "preset": "gradient",
+       "sh": "medium"
+      },
+      "screen": "welcome"
+     },
+     {
+      "target": {
+       "type": "logo",
+       "text": "Alrowad International Schools"
+      },
+      "set": {
+       "bg": "#17263D"
+      },
+      "screen": "welcome"
+     },
+     {
+      "target": {
+       "type": "text",
+       "text": "Welcome to our school app!"
+      },
+      "set": {
+       "fg": "#064F47",
+       "al": "center",
+       "fw": "bold"
+      },
+      "screen": "welcome"
+     },
+     {
+      "target": {
+       "type": "card",
+       "text": "Homework Helper"
+      },
+      "set": {
+       "bg": "#DDF7F3",
+       "fg": "#064F47"
+      },
+      "screen": "welcome"
+     },
+     {
+      "target": {
+       "type": "card",
+       "text": "My Timetable"
+      },
+      "set": {
+       "bg": "#DDF7F3",
+       "fg": "#064F47"
+      },
+      "screen": "welcome"
+     },
+     {
+      "target": {
+       "type": "card",
+       "text": "Daily Quiz"
+      },
+      "set": {
+       "bg": "#DDF7F3",
+       "fg": "#064F47"
+      },
+      "screen": "welcome"
+     },
+     {
+      "target": {
+       "type": "button",
+       "text": "Get Started"
+      },
+      "set": {
+       "bg": "#0D8B7D",
+       "fg": "#FFFFFF",
+       "br": 28
+      },
+      "screen": "welcome"
+     },
+     {
+      "target": {
+       "type": "button",
+       "text": "About Us"
+      },
+      "set": {
+       "preset": "outline",
+       "br": 28
+      },
+      "screen": "welcome"
+     }
+    ]
+   },
+   "expect": []
+  },
+  {
+   "id": "w1-s14",
+   "title": "Run and test your welcome screen",
+   "screen": "welcome",
+   "objective": "Use your screen like a student would.",
+   "concept": "Run Project turns the phone into a working app. The studio first shows a short demo of your buttons, then you can tap them yourself.",
+   "expected": "Tapping Get Started opens the Home dashboard.",
+   "do": {
+    "k": "custom",
+    "allow": []
+   },
+   "expect": [
+    {
+     "t": "flag",
+     "name": "ran",
+     "fail": "Press Run Project in the top bar.",
+     "label": "You pressed Run Project"
+    },
+    {
+     "t": "flag",
+     "name": "nav:home",
+     "label": "You tapped Get Started and saw the Home screen",
+     "fail": "In the running app, tap Get Started yourself. If nothing happens, check the link you made in step 12."
+    }
+   ],
+   "subs": [
+    {
+     "t": "Press Run Project in the top bar",
+     "hot": [
+      "topRun"
+     ],
+     "done": {
+      "any": [
+       {
+        "run": true
+       },
+       {
+        "flag": "nav:home"
+       }
+      ]
+     }
+    },
+    {
+     "t": "Watch the demo, then tap Get Started yourself",
+     "hot": [
+      "runBtn:Get Started"
+     ],
+     "done": {
+      "flag": "nav:home"
+     }
+    }
+   ],
+   "hints": [
+    "Press Run Project and watch the demo.",
+    "Tap the Get Started button on the phone.",
+    "The Home dashboard should appear."
+   ]
+  }
+ ],
+ "objectives": [
+  "Design the first screen students see: your school’s name, a logo and a welcome message.",
+  "Use cards and buttons, and link a button to the Home screen.",
+  "Choose your own colours, then run the screen like a real student."
+ ],
+ "mcqs": [
+  {
+   "q": "What is the main job of the first screen of an app?",
+   "a": [
+    "Welcome the user and show where to go next",
+    "Store all the data",
+    "Show every feature at once",
+    "Run the quiz"
+   ],
+   "why": "The first screen gives a friendly start and a clear next action."
+  },
+  {
+   "q": "Which tool puts a round badge with the school's initials on a screen?",
+   "a": [
+    "Logo",
+    "Header",
+    "Text Input",
+    "Time"
+   ],
+   "why": "A logo helps users recognise the school or app at a glance."
+  },
+  {
+   "q": "Why are cards used for the main sections on a welcome screen?",
+   "a": [
+    "Each card holds one item and is easy to see and tap",
+    "Cards make the app load faster",
+    "Cards are the only way to add text",
+    "Cards hide the buttons"
+   ],
+   "why": "Cards group one idea each, so the screen stays tidy."
+  },
+  {
+   "q": "What does a command like LINK BUTTON do?",
+   "a": [
+    "Connects a button to the screen it should open",
+    "Changes the button colour",
+    "Deletes the screen",
+    "Saves the form"
+   ],
+   "why": "Commands are typed instructions that tell the app what to do."
+  },
+  {
+   "q": "What is the best way to check that a button works?",
+   "a": [
+    "Run the project and tap it like a real user",
+    "Look at it carefully",
+    "Change its colour",
+    "Rename the screen"
+   ],
+   "why": "Only running the app shows what a user will really experience."
+  }
+ ],
+ "flowchart": "flowcharts/w1.json",
+ "reference": {
+  "screens": {
+   "welcome": [
+    {
+     "id": "header-1",
+     "type": "header",
+     "zone": "header",
+     "text": "Alrowad International Schools",
+     "action": null,
+     "link": null,
+     "preset": "gradient",
+     "sh": "medium"
+    },
+    {
+     "id": "logo-2",
+     "type": "logo",
+     "zone": "body",
+     "text": "Alrowad International Schools",
+     "action": null,
+     "link": null,
+     "bg": "#17263D"
+    },
+    {
+     "id": "text-3",
+     "type": "text",
+     "zone": "body",
+     "text": "Welcome to our school app!",
+     "action": null,
+     "link": null,
+     "fg": "#064F47",
+     "al": "center",
+     "fw": "bold"
+    },
+    {
+     "id": "card-4",
+     "type": "card",
+     "zone": "body",
+     "text": "Homework Helper",
+     "action": null,
+     "link": null,
+     "bg": "#DDF7F3",
+     "fg": "#064F47"
+    },
+    {
+     "id": "card-5",
+     "type": "card",
+     "zone": "body",
+     "text": "My Timetable",
+     "action": null,
+     "link": null,
+     "bg": "#DDF7F3",
+     "fg": "#064F47"
+    },
+    {
+     "id": "card-6",
+     "type": "card",
+     "zone": "body",
+     "text": "Daily Quiz",
+     "action": null,
+     "link": null,
+     "bg": "#DDF7F3",
+     "fg": "#064F47"
+    },
+    {
+     "id": "button-7",
+     "type": "button",
+     "zone": "footer",
+     "text": "Get Started",
+     "action": null,
+     "link": "home",
+     "bg": "#0D8B7D",
+     "fg": "#FFFFFF",
+     "br": 28
+    },
+    {
+     "id": "button-8",
+     "type": "button",
+     "zone": "footer",
+     "text": "About Us",
+     "action": null,
+     "link": null,
+     "preset": "outline",
+     "br": 28
+    }
+   ],
+   "home": []
+  }
+ }
+}

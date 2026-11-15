@@ -1,0 +1,204 @@
+{
+ "module": "m5",
+ "title": "Daily Quiz",
+ "subtitle": "A multiple-choice quiz with your own questions and a final score.",
+ "nodes": [
+  {
+   "id": "start",
+   "type": "start",
+   "label": "Start Module 5"
+  },
+  {
+   "id": "a",
+   "type": "manual",
+   "label": "Drag a Header, type: Daily Quiz",
+   "step": [
+    "m5-s1",
+    "m5-s2"
+   ]
+  },
+  {
+   "id": "b",
+   "type": "input",
+   "label": "Command: ADD TEXT \"Test yourself with 3 quick questions.\"",
+   "step": "m5-s3"
+  },
+  {
+   "id": "c",
+   "type": "manual",
+   "label": "Drag a Button, label it Start Quiz",
+   "step": [
+    "m5-s4",
+    "m5-s5"
+   ]
+  },
+  {
+   "id": "d",
+   "type": "input",
+   "label": "NAVIGATE TO \"Quiz\", ADD HEADER \"Quiz time\"",
+   "step": [
+    "m5-s6",
+    "m5-s7"
+   ]
+  },
+  {
+   "id": "e",
+   "type": "manual",
+   "label": "Drag a Quiz into the Body",
+   "step": "m5-s8"
+  },
+  {
+   "id": "f",
+   "type": "input",
+   "label": "ADD QUESTION ... three times (question, right answer, wrong answers)",
+   "note": "The first answer you type is the right one; the app shuffles them.",
+   "step": [
+    "m5-s9",
+    "m5-s10"
+   ]
+  },
+  {
+   "id": "g",
+   "type": "input",
+   "label": "Link Start Quiz to the Quiz screen",
+   "step": "m5-s11"
+  },
+  {
+   "id": "h",
+   "type": "process",
+   "label": "Style the screens",
+   "step": "m5-style"
+  },
+  {
+   "id": "i",
+   "type": "subprocess",
+   "label": "Run Project and take your quiz",
+   "step": "m5-s12"
+  },
+  {
+   "id": "v1",
+   "type": "display",
+   "label": "Show question and 3 answers"
+  },
+  {
+   "id": "q",
+   "type": "decision",
+   "label": "Is the chosen answer correct?"
+  },
+  {
+   "id": "no",
+   "type": "display",
+   "label": "Red: show the right answer",
+   "rowWith": "q"
+  },
+  {
+   "id": "yes",
+   "type": "process",
+   "label": "Green: add 1 to the score"
+  },
+  {
+   "id": "q2",
+   "type": "decision",
+   "label": "Are there more questions?"
+  },
+  {
+   "id": "db",
+   "type": "data",
+   "label": "Save the score in \"scores\""
+  },
+  {
+   "id": "v2",
+   "type": "display",
+   "label": "Show the score and a message"
+  },
+  {
+   "id": "end",
+   "type": "end",
+   "label": "Module 5 complete: take the quiz"
+  }
+ ],
+ "edges": [
+  {
+   "from": "start",
+   "to": "a"
+  },
+  {
+   "from": "a",
+   "to": "b"
+  },
+  {
+   "from": "b",
+   "to": "c"
+  },
+  {
+   "from": "c",
+   "to": "d"
+  },
+  {
+   "from": "d",
+   "to": "e"
+  },
+  {
+   "from": "e",
+   "to": "f"
+  },
+  {
+   "from": "f",
+   "to": "g"
+  },
+  {
+   "from": "g",
+   "to": "h"
+  },
+  {
+   "from": "h",
+   "to": "i"
+  },
+  {
+   "from": "i",
+   "to": "v1"
+  },
+  {
+   "from": "v1",
+   "to": "q"
+  },
+  {
+   "from": "q",
+   "to": "yes",
+   "label": "Yes"
+  },
+  {
+   "from": "q",
+   "to": "no",
+   "label": "No"
+  },
+  {
+   "from": "no",
+   "to": "q2"
+  },
+  {
+   "from": "yes",
+   "to": "q2"
+  },
+  {
+   "from": "q2",
+   "to": "v1",
+   "label": "Yes",
+   "route": "loop",
+   "side": "right"
+  },
+  {
+   "from": "q2",
+   "to": "db",
+   "label": "No"
+  },
+  {
+   "from": "db",
+   "to": "v2"
+  },
+  {
+   "from": "v2",
+   "to": "end"
+  }
+ ]
+}

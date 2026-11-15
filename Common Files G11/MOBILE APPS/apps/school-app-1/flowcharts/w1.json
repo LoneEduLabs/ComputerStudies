@@ -1,0 +1,188 @@
+{
+ "module": "w1",
+ "title": "Welcome Screen",
+ "subtitle": "Build the first screen of the app, then test that Get Started opens Home.",
+ "nodes": [
+  {
+   "id": "start",
+   "type": "start",
+   "label": "Start Module 1"
+  },
+  {
+   "id": "a",
+   "type": "manual",
+   "label": "Drag a Header into the Header zone",
+   "note": "The title bar at the top of the phone.",
+   "step": "w1-s1"
+  },
+  {
+   "id": "b",
+   "type": "input",
+   "label": "Type the school name: Alrowad International Schools",
+   "note": "Properties panel, Text content, then press Enter.",
+   "step": "w1-s2"
+  },
+  {
+   "id": "c",
+   "type": "manual",
+   "label": "Drag a Logo into the Body, type the school name on it",
+   "note": "The logo shows the initials AI.",
+   "step": [
+    "w1-s3",
+    "w1-s4"
+   ]
+  },
+  {
+   "id": "d",
+   "type": "input",
+   "label": "Command: ADD TEXT \"Welcome to our school app!\"",
+   "note": "Typed in the Commands tab, then Run Commands.",
+   "step": "w1-s5"
+  },
+  {
+   "id": "e",
+   "type": "manual",
+   "label": "Drag a Card, then SET TEXT \"Homework Helper\"",
+   "note": "Select the card on the phone first.",
+   "step": [
+    "w1-s6",
+    "w1-s7"
+   ]
+  },
+  {
+   "id": "f",
+   "type": "input",
+   "label": "Command: ADD CARD two more cards",
+   "note": "Two ADD CARD commands, one per line.",
+   "step": "w1-s8"
+  },
+  {
+   "id": "g",
+   "type": "manual",
+   "label": "Drag a Button into the Action bar, label it Get Started",
+   "step": [
+    "w1-s9",
+    "w1-s10"
+   ]
+  },
+  {
+   "id": "h",
+   "type": "input",
+   "label": "Command: ADD BUTTON \"About Us\"",
+   "step": "w1-s11"
+  },
+  {
+   "id": "i",
+   "type": "input",
+   "label": "Command: LINK BUTTON \"Get Started\" TO \"Home\"",
+   "note": "This is what makes the button open the Home screen.",
+   "step": "w1-s12"
+  },
+  {
+   "id": "j",
+   "type": "process",
+   "label": "Style the screen: gradient header, navy logo, teal buttons",
+   "note": "Exact choices are listed in the guide.",
+   "step": "w1-style"
+  },
+  {
+   "id": "k",
+   "type": "subprocess",
+   "label": "Run Project and tap Get Started",
+   "note": "The studio shows a demo, then you tap it yourself.",
+   "step": "w1-s14"
+  },
+  {
+   "id": "q",
+   "type": "decision",
+   "label": "Does Get Started open the Home screen?"
+  },
+  {
+   "id": "fix",
+   "type": "process",
+   "label": "Check the LINK command and the button name",
+   "note": "Fix it, then run again.",
+   "rowWith": "q"
+  },
+  {
+   "id": "l",
+   "type": "display",
+   "label": "Home screen is shown with the module tiles"
+  },
+  {
+   "id": "end",
+   "type": "end",
+   "label": "Module 1 complete: take the 5-question quiz"
+  }
+ ],
+ "edges": [
+  {
+   "from": "start",
+   "to": "a"
+  },
+  {
+   "from": "a",
+   "to": "b"
+  },
+  {
+   "from": "b",
+   "to": "c"
+  },
+  {
+   "from": "c",
+   "to": "d"
+  },
+  {
+   "from": "d",
+   "to": "e"
+  },
+  {
+   "from": "e",
+   "to": "f"
+  },
+  {
+   "from": "f",
+   "to": "g"
+  },
+  {
+   "from": "g",
+   "to": "h"
+  },
+  {
+   "from": "h",
+   "to": "i"
+  },
+  {
+   "from": "i",
+   "to": "j"
+  },
+  {
+   "from": "j",
+   "to": "k"
+  },
+  {
+   "from": "k",
+   "to": "q"
+  },
+  {
+   "from": "q",
+   "to": "l",
+   "label": "Yes"
+  },
+  {
+   "from": "q",
+   "to": "fix",
+   "label": "No"
+  },
+  {
+   "from": "fix",
+   "to": "k",
+   "route": "loop",
+   "side": "right"
+  },
+  {
+   "from": "l",
+   "to": "end"
+  }
+ ]
+}

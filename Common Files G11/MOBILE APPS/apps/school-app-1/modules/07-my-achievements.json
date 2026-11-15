@@ -1,0 +1,375 @@
+{
+ "id": "m7",
+ "number": 7,
+ "title": "My Achievements",
+ "icon": "trophy",
+ "week": 3,
+ "summary": "Design badges that unlock as students use the other modules.",
+ "skills": [
+  "Rules and thresholds",
+  "Reading saved data",
+  "Progress bars"
+ ],
+ "screens": [
+  {
+   "id": "achievements",
+   "name": "My Achievements"
+  }
+ ],
+ "startScreen": "achievements",
+ "tools": [
+  "header",
+  "text",
+  "achievements"
+ ],
+ "listCollection": null,
+ "subjectCards": false,
+ "formScreen": null,
+ "builtinHome": false,
+ "steps": [
+  {
+   "id": "m7-s1",
+   "title": "Add the header",
+   "screen": "achievements",
+   "objective": "Start the My Achievements screen with a title bar.",
+   "concept": "A header sits at the top of a screen and tells people where they are.",
+   "expected": "A title bar appears at the top of the phone.",
+   "do": {
+    "k": "drag",
+    "tool": "header",
+    "zone": "header",
+    "n": 1
+   },
+   "expect": [
+    {
+     "type": "header",
+     "zone": "header",
+     "min": 1,
+     "label": "A Header sits in the Header zone of My Achievements",
+     "fail": "Drag the Header tool onto the glowing Header zone."
+    }
+   ],
+   "hints": [
+    "Find the glowing Header tool in the toolbox on the left.",
+    "Drag it onto the glowing Header zone of the phone.",
+    "On a touch screen: tap Header, then tap the glowing Header zone."
+   ]
+  },
+  {
+   "id": "m7-s2",
+   "title": "Name your screen",
+   "screen": "achievements",
+   "objective": "Give the screen a clear title.",
+   "concept": "The header will say “My Achievements”. A clear title means nobody gets lost.",
+   "expected": "The header reads “My Achievements”.",
+   "do": {
+    "k": "edit",
+    "type": "header",
+    "text": "My Achievements"
+   },
+   "expect": [
+    {
+     "type": "header",
+     "text": "My Achievements",
+     "label": "The header says exactly: My Achievements"
+    }
+   ],
+   "hints": [
+    "Click the header on the phone to select it.",
+    "Edit Text content in the Properties panel.",
+    "Type exactly: My Achievements"
+   ],
+   "styles": [
+    {
+     "target": {
+      "type": "header",
+      "text": "My Achievements"
+     },
+     "set": {
+      "preset": "gradient"
+     },
+     "screen": "achievements"
+    }
+   ]
+  },
+  {
+   "id": "m7-s3",
+   "title": "Add the badge board",
+   "screen": "achievements",
+   "objective": "Place the achievements component.",
+   "concept": "The board shows badges as locked or unlocked, with a progress bar. It reads the data the other modules saved, so it grows as students use the app.",
+   "expected": "A badge board appears in the Body zone.",
+   "do": {
+    "k": "drag",
+    "tool": "achievements",
+    "zone": "body",
+    "n": 1
+   },
+   "expect": [
+    {
+     "type": "achievements",
+     "zone": "body",
+     "min": 1,
+     "label": "A Achievements sits in the Body zone of My Achievements",
+     "fail": "Drag the Achievements tool onto the glowing Body zone."
+    }
+   ],
+   "hints": [
+    "Find the glowing Achievements tool in the toolbox on the left.",
+    "Drag it onto the glowing Body zone of the phone.",
+    "On a touch screen: tap Achievements, then tap the glowing Body zone."
+   ]
+  },
+  {
+   "id": "m7-s4",
+   "title": "Design your first badge",
+   "screen": "achievements",
+   "objective": "Create a badge with a goal.",
+   "concept": "ADD BADGE needs a name, the collection to count (FOR) and the number needed (AT). Collections you can use: homework (ticked off), lessons, reminders, scores, chats, shelf and safety.",
+   "expected": "The board shows 1 badge.",
+   "do": {
+    "k": "cmd",
+    "cmds": [
+     "ADD BADGE \"Homework Hero\" FOR \"homework\" AT 3"
+    ],
+    "allow": [
+     "ADD BADGE"
+    ],
+    "free": false,
+    "select": null
+   },
+   "expect": [
+    {
+     "type": "achievements",
+     "len": {
+      "badges": 1
+     },
+     "label": "The board has at least 1 badge"
+    }
+   ],
+   "hints": [
+    "ADD BADGE \"name\" FOR \"collection\" AT number.",
+    "The number is not in quotation marks.",
+    "Copy the command from the step card exactly, then press Run Commands."
+   ]
+  },
+  {
+   "id": "m7-s5",
+   "title": "Add two more badges",
+   "screen": "achievements",
+   "objective": "Reward different things.",
+   "concept": "Different collections give different goals: quiz scores, books on the shelf, reminders and more.",
+   "expected": "The board shows 3 badges.",
+   "do": {
+    "k": "cmd",
+    "cmds": [
+     "ADD BADGE \"Quiz Whiz\" FOR \"scores\" AT 1",
+     "ADD BADGE \"Bookworm\" FOR \"shelf\" AT 2"
+    ],
+    "allow": [
+     "ADD BADGE"
+    ],
+    "free": false,
+    "select": null
+   },
+   "expect": [
+    {
+     "type": "achievements",
+     "len": {
+      "badges": 3
+     },
+     "label": "The board has at least 3 badges"
+    }
+   ],
+   "hints": [
+    "Two ADD BADGE lines, one per line.",
+    "Put the text inside straight quotation marks.",
+    "Copy the command from the step card exactly, then press Run Commands."
+   ]
+  },
+  {
+   "id": "m7-style",
+   "title": "Final style check: every colour, border, shadow and style",
+   "screen": "achievements",
+   "objective": "Give your screens the same colours, shapes and shadows as the model app.",
+   "concept": "Colours were chosen while you built each element. Now finish the whole look: every colour, background, border, corner, shadow and text style below must match the model app you tried at the start. Items you already set show a tick.",
+   "expected": "Your screens look exactly like the model app.",
+   "hints": [
+    "Click the element on the phone first. The style box (Choose colours, borders and corners) opens by itself.",
+    "Follow the sub-steps one by one: each says which row to use and which option to click. The red dot shows where.",
+    "Text alignment and weight are in the Properties panel (right) under “Text and layout”."
+   ],
+   "do": {
+    "k": "style",
+    "acts": [
+     {
+      "target": {
+       "type": "header",
+       "text": "My Achievements"
+      },
+      "set": {
+       "preset": "gradient",
+       "sh": "medium"
+      },
+      "screen": "achievements"
+     }
+    ]
+   },
+   "expect": []
+  },
+  {
+   "id": "m7-s7",
+   "title": "Run and check your badges",
+   "screen": "achievements",
+   "objective": "See your badges and their progress bars.",
+   "concept": "Badges unlock as students use the other modules. Locked badges show how close you are.",
+   "expected": "You can see every badge with its progress.",
+   "do": {
+    "k": "custom",
+    "allow": []
+   },
+   "expect": [
+    {
+     "t": "flag",
+     "name": "ran"
+    },
+    {
+     "t": "flag",
+     "name": "viewed:achievements",
+     "label": "You saw the badge board in the running app"
+    }
+   ],
+   "subs": [
+    {
+     "t": "Press Run Project in the top bar",
+     "hot": [
+      "topRun"
+     ],
+     "done": {
+      "any": [
+       {
+        "run": true
+       },
+       {
+        "flag": "viewed:achievements"
+       }
+      ]
+     }
+    },
+    {
+     "t": "Tap a badge to see its progress",
+     "hot": [
+      "runComp:ach"
+     ],
+     "done": {
+      "flag": "viewed:achievements"
+     }
+    }
+   ],
+   "hints": [
+    "Press Run Project.",
+    "Tap a badge to read its progress.",
+    "Complete tasks in other modules to unlock more."
+   ]
+  }
+ ],
+ "objectives": [
+  "Design badges that unlock after a number of saved items.",
+  "Read data saved by the other modules.",
+  "Show progress with locked and unlocked badges."
+ ],
+ "mcqs": [
+  {
+   "q": "What makes a badge unlock?",
+   "a": [
+    "The count of saved items reaches its target",
+    "The screen is rotated",
+    "The header is renamed",
+    "The phone restarts"
+   ],
+   "why": "The app compares a count with the badge's target number."
+  },
+  {
+   "q": "Why show a progress bar on a locked badge?",
+   "a": [
+    "It shows how close the student is",
+    "It hides the badge",
+    "It deletes data",
+    "It changes the target"
+   ],
+   "why": "Progress feedback keeps people motivated."
+  },
+  {
+   "q": "Why do apps use badges and rewards?",
+   "a": [
+    "To encourage regular, positive use",
+    "To slow the app down",
+    "To store passwords",
+    "To hide features"
+   ],
+   "why": "Rewards make progress visible and fun."
+  },
+  {
+   "q": "Which three things define a badge in this app?",
+   "a": [
+    "A name, a collection to count and a target number",
+    "A colour, a font and a size",
+    "A grade, a SID and a date",
+    "A header, a footer and a link"
+   ],
+   "why": "The collection and target tell the app when to unlock it."
+  },
+  {
+   "q": "Why are locked badges still visible?",
+   "a": [
+    "So users know what they can aim for",
+    "Because they are broken",
+    "To fill the screen",
+    "To hide the unlocked ones"
+   ],
+   "why": "Seeing goals makes people want to reach them."
+  }
+ ],
+ "flowchart": "flowcharts/m7.json",
+ "reference": {
+  "screens": {
+   "achievements": [
+    {
+     "id": "header-39",
+     "type": "header",
+     "zone": "header",
+     "text": "My Achievements",
+     "action": null,
+     "link": null,
+     "preset": "gradient",
+     "sh": "medium"
+    },
+    {
+     "id": "achievements-40",
+     "type": "achievements",
+     "zone": "body",
+     "text": "My badges",
+     "action": null,
+     "link": null,
+     "badges": [
+      {
+       "name": "Homework Hero",
+       "coll": "homework",
+       "n": 3
+      },
+      {
+       "name": "Quiz Whiz",
+       "coll": "scores",
+       "n": 1
+      },
+      {
+       "name": "Bookworm",
+       "coll": "shelf",
+       "n": 2
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

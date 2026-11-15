@@ -1,0 +1,164 @@
+{
+ "module": "m9",
+ "title": "Cyber Safety",
+ "subtitle": "Safety tips you write plus a quick check of real situations.",
+ "nodes": [
+  {
+   "id": "start",
+   "type": "start",
+   "label": "Start Module 9"
+  },
+  {
+   "id": "a",
+   "type": "manual",
+   "label": "Drag a Header, type: Cyber Safety",
+   "step": [
+    "m9-s1",
+    "m9-s2"
+   ]
+  },
+  {
+   "id": "b",
+   "type": "manual",
+   "label": "Drag a Safety panel into the Body",
+   "step": "m9-s3"
+  },
+  {
+   "id": "c",
+   "type": "input",
+   "label": "Command: ADD TIP \"Never share your password with anyone.\"",
+   "step": "m9-s4"
+  },
+  {
+   "id": "d",
+   "type": "input",
+   "label": "Two more ADD TIP commands",
+   "step": "m9-s5"
+  },
+  {
+   "id": "e",
+   "type": "process",
+   "label": "Style the screen",
+   "step": "m9-style"
+  },
+  {
+   "id": "f",
+   "type": "subprocess",
+   "label": "Run the safety check",
+   "step": "m9-s6"
+  },
+  {
+   "id": "g",
+   "type": "display",
+   "label": "Show a situation and 3 choices"
+  },
+  {
+   "id": "q",
+   "type": "decision",
+   "label": "Did the student pick the safest choice?"
+  },
+  {
+   "id": "n",
+   "type": "display",
+   "label": "Explain why it was not the safest",
+   "rowWith": "q"
+  },
+  {
+   "id": "y",
+   "type": "process",
+   "label": "Add 1 to the score; explain why it is safe"
+  },
+  {
+   "id": "q2",
+   "type": "decision",
+   "label": "Are there more situations?"
+  },
+  {
+   "id": "db",
+   "type": "data",
+   "label": "Save the result in \"safety\""
+  },
+  {
+   "id": "v",
+   "type": "display",
+   "label": "Show the score and a message"
+  },
+  {
+   "id": "end",
+   "type": "end",
+   "label": "Module 9 complete: take the quiz and publish"
+  }
+ ],
+ "edges": [
+  {
+   "from": "start",
+   "to": "a"
+  },
+  {
+   "from": "a",
+   "to": "b"
+  },
+  {
+   "from": "b",
+   "to": "c"
+  },
+  {
+   "from": "c",
+   "to": "d"
+  },
+  {
+   "from": "d",
+   "to": "e"
+  },
+  {
+   "from": "e",
+   "to": "f"
+  },
+  {
+   "from": "f",
+   "to": "g"
+  },
+  {
+   "from": "g",
+   "to": "q"
+  },
+  {
+   "from": "q",
+   "to": "y",
+   "label": "Yes"
+  },
+  {
+   "from": "q",
+   "to": "n",
+   "label": "No"
+  },
+  {
+   "from": "n",
+   "to": "q2"
+  },
+  {
+   "from": "y",
+   "to": "q2"
+  },
+  {
+   "from": "q2",
+   "to": "g",
+   "label": "Yes",
+   "route": "loop",
+   "side": "right"
+  },
+  {
+   "from": "q2",
+   "to": "db",
+   "label": "No"
+  },
+  {
+   "from": "db",
+   "to": "v"
+  },
+  {
+   "from": "v",
+   "to": "end"
+  }
+ ]
+}

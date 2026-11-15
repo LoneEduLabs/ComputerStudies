@@ -1,0 +1,168 @@
+{
+ "module": "m6",
+ "title": "AI Study Assistant",
+ "subtitle": "A study helper that answers from the keyword rules you teach it.",
+ "nodes": [
+  {
+   "id": "start",
+   "type": "start",
+   "label": "Start Module 6"
+  },
+  {
+   "id": "a",
+   "type": "manual",
+   "label": "Drag a Header, type: Study Assistant",
+   "step": [
+    "m6-s1",
+    "m6-s2"
+   ]
+  },
+  {
+   "id": "b",
+   "type": "input",
+   "label": "Command: ADD TEXT (the safety note)",
+   "note": "Reminds students to ask a teacher for important things.",
+   "step": "m6-s3"
+  },
+  {
+   "id": "c",
+   "type": "manual",
+   "label": "Drag a Chat helper into the Body",
+   "step": "m6-s4"
+  },
+  {
+   "id": "d",
+   "type": "input",
+   "label": "Command: ADD RULE \"homework\" REPLY \"...\"",
+   "note": "A rule = keywords + the reply.",
+   "step": "m6-s5"
+  },
+  {
+   "id": "e",
+   "type": "input",
+   "label": "Two more ADD RULE commands",
+   "step": "m6-s6"
+  },
+  {
+   "id": "f",
+   "type": "process",
+   "label": "Style the screen",
+   "step": "m6-style"
+  },
+  {
+   "id": "g",
+   "type": "subprocess",
+   "label": "Run Project and talk to your helper",
+   "step": "m6-s7"
+  },
+  {
+   "id": "h",
+   "type": "input",
+   "label": "Student types a question"
+  },
+  {
+   "id": "q1",
+   "type": "decision",
+   "label": "Does a keyword match one of YOUR rules?"
+  },
+  {
+   "id": "q2",
+   "type": "decision",
+   "label": "Does a built-in tip match?"
+  },
+  {
+   "id": "r1",
+   "type": "display",
+   "label": "Reply with your rule",
+   "rowWith": "q1"
+  },
+  {
+   "id": "r2",
+   "type": "display",
+   "label": "Reply with the built-in tip",
+   "rowWith": "q2"
+  },
+  {
+   "id": "r3",
+   "type": "display",
+   "label": "Reply: \"I do not know that yet\""
+  },
+  {
+   "id": "end",
+   "type": "end",
+   "label": "Module 6 complete: take the quiz"
+  }
+ ],
+ "edges": [
+  {
+   "from": "start",
+   "to": "a"
+  },
+  {
+   "from": "a",
+   "to": "b"
+  },
+  {
+   "from": "b",
+   "to": "c"
+  },
+  {
+   "from": "c",
+   "to": "d"
+  },
+  {
+   "from": "d",
+   "to": "e"
+  },
+  {
+   "from": "e",
+   "to": "f"
+  },
+  {
+   "from": "f",
+   "to": "g"
+  },
+  {
+   "from": "g",
+   "to": "h"
+  },
+  {
+   "from": "h",
+   "to": "q1"
+  },
+  {
+   "from": "q1",
+   "to": "r1",
+   "label": "Yes"
+  },
+  {
+   "from": "q1",
+   "to": "q2",
+   "label": "No"
+  },
+  {
+   "from": "q2",
+   "to": "r2",
+   "label": "Yes"
+  },
+  {
+   "from": "q2",
+   "to": "r3",
+   "label": "No"
+  },
+  {
+   "from": "r1",
+   "to": "end"
+  },
+  {
+   "from": "r3",
+   "to": "end"
+  },
+  {
+   "from": "r2",
+   "to": "end",
+   "route": "loop",
+   "side": "right"
+  }
+ ]
+}
